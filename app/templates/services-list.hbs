@@ -1,0 +1,17 @@
+{{action-bar back-btn-name="Back" back-btn-link="index" header="Choose a service" current-step="Step 1 of 6"}}
+<div class="container">
+    <div class="header-wrapper text-center">
+        <div class="input-group search-input">
+            <div class="input-group-addon"><i class="glyphicon glyphicon-search" aria-hidden="true"></i></div>
+            <input type="text" class="form-control" placeholder="Search services">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <ul class="service-grid">
+        {{#each model as | service|}}
+            {{service-item service-name=service.title service-link=service.target background-color=service.bColor image-url=service.imgUrl}}
+        {{/each}}
+    </ul>
+</div>

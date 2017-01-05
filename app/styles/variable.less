@@ -1,0 +1,53 @@
+@background-color:#fff;
+@primary-color :#09f;
+@font-family: "Avenir Next W01", "Avenir Next", "Avenir", helvetica, arial, sans-serif;
+
+@feed-color:#ec7505;
+
+
+.flexBox{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.flexWrap{
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.flex-justify-content(@position){
+    -webkit-box-pack: @position;
+    -ms-flex-pack: @position;
+    -webkit-justify-content: @position;
+    -moz-justify-content: @position;
+    justify-content: @position;
+}
+.flex-align(@position){
+    -webkit-box-align: @position;
+    -ms-flex-align: @position;
+    -webkit-align-items: @position;
+    -moz-align-items: @position;
+    align-items: @position;
+}
+.flex(@value){
+    -webkit-box-flex: 0;
+    -webkit-flex: @value;
+    -moz-box-flex: 0;
+    -moz-flex: @value;
+    -ms-flex: @value;
+    flex: @value;
+}
+.flex-direction(@direction){
+    -webkit-flex-direction: @direction;
+    -moz-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+}
+.border-box{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}

@@ -1,0 +1,22 @@
+{{action-bar back-btn-name="Back" back-btn-link="action-list" header="Complete action fields" current-step="Step 5 of 6"}}
+
+<div class="container">
+    <div class="trigger-fields-container" style="background-color:#2468ff">
+        <div class="information hidden-sm hidden-xs">
+            <h3>Send me an email</h3>
+            <p>This Action will send you an HTML based email. Images and links are supported.</p>
+        </div>
+
+        <form name="triggerForm" {{action 'submit' on='submit'}}>
+            <div class="form-group">
+                <label for="actionEmail">Email *</label>
+                <p id="required-error-text" class="text-danger" style="display:none">Required</p>
+                <p id="invalid-error-text" class="text-danger" style="display:none">Invalid email</p>
+                {{input type="email" class="form-control" id="actionEmail" title="Valid email eg: abc@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" require='required' value=configuration.url }}
+            </div>
+            <button id="submit-btn" type="submit" class="btn">Create action</button>
+        </form>
+
+        
+    </div>
+</div>
