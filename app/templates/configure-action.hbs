@@ -7,14 +7,18 @@
             <p>This Action will send you an HTML based email. Images and links are supported.</p>
         </div>
 
-        <form name="triggerForm" {{action 'submit' on='submit'}}>
+        <form name="triggerForm" {{action 'saveAction' on='submit'}} novalidate>
             <div class="form-group">
+                {{#unless emailAddress}}
+                <p id="required-error-text" class="text-danger"><b>Required</b></p>
+                {{/unless}}
+                {{#unless isValid}}
+                <p id="invalid-error-text" class="text-danger"><b>Invalid URL</b></p>
+                {{/unless}}
                 <label for="actionEmail">Email *</label>
-                <p id="required-error-text" class="text-danger" style="display:none">Required</p>
-                <p id="invalid-error-text" class="text-danger" style="display:none">Invalid email</p>
-                {{input type="email" class="form-control" id="actionEmail" title="Valid email eg: abc@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" require='required' value=configuration.url }}
+                {{input type="email" class="form-control" id="actionEmail"  value=emailAddress }}
             </div>
-            <button id="submit-btn" type="submit" class="btn">Create action</button>
+            <button id="submit-btn" type="submit" class="btn" disabled={{isDisabled}}>Create action</button>
         </form>
 
         
